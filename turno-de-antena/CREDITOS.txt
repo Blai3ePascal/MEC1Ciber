@@ -1,0 +1,7 @@
+Sierra Clara · edición docente 20–21 noviembre de 2026
+Para David Pacios Izquierdo (Pascal), Máster UCM–IMSED.
+Escenarios, diagramas, CSS y código de esta revisión: creación específica para este encargo con asistencia de Codex. Sin imágenes ni tipografías descargadas.
+No se incorporan librerías de ejecución ni código de terceros a la web.
+Microsoft MS17-010, publicado 14/03/2017: se enlaza la fuente histórica, no se redistribuye el boletín. Los registros de la guardia son ficticios.
+Inspiración compositiva: tablero de análisis de Lichess (https://lichess.org/analysis). Paleta y función docente: simuladores MEC del profesor. No se copia código, marcas ni activos de Lichess.
+Herramienta de build: Terser 5.44.1, licencia BSD-2-Clause, dependencia de desarrollo fijada en package-lock.json. Sus dependencias no se despliegan. Licencias conservadas en node_modules para el entorno de desarrollo y en la documentación privada de QA.

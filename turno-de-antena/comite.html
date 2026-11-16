@@ -1,27 +1,6 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
-<title>Comité del boletín · Sierra Clara</title>
-<link rel="stylesheet" href="aula.css">
-<link rel="stylesheet" href="mesas.css">
-<script defer src="mesas.js"></script>
-<script defer src="comite.js"></script>
-</head>
-<body>
-<a class="skip" href="#contenido">Saltar a la mesa de juego</a>
-<header><div class="cab"><b>Sierra Clara</b><span>Red de pluviómetros</span></div></header>
-<main id="contenido" data-game="D1-COMITE">
-<p class="folio">D1-COMITE <span>/</span> NOVIEMBRE DE 2026</p>
-<h1>Comité del boletín</h1><p class="entradilla">Tu turno dispone de seis horas-persona. Decide en qué gastarlas, comprueba qué lecturas llegan a tiempo y firma el boletín de las 18:00.</p>
-<nav class="topnav" aria-label="Simuladores de riesgos"><a href="index.html">Turno de antena</a><a href="mapa.html">Mapa de cobertura</a><a href="estima.html">La cuenta del corte</a><a href="comite.html" aria-current="page">Comité del boletín</a></nav>
-<div class="tablero">
-<section class="panel" aria-labelledby="fase"><div class="barra"><span id="fase">17:35 · Primera orden</span></div>
-<div id="mesa"></div><p id="aviso" role="status" aria-live="polite"></p><noscript>Activa JavaScript para jugar.</noscript></section>
-<aside><h2>Documentos de la mesa</h2><p>La edición ordinaria exige una observación válida de cabecera y otra de valle. La edición parcial identifica la zona que falta. También puedes aplazar y fijar una nueva revisión.</p><div id="documentos"></div>
-<details><summary>Incorporar un relevo anterior</summary><p>Opcional. El archivo se lee en este navegador. La partida funciona también con el expediente inicial.</p>
-<label for="archivo">Archivo de relevo JSON</label><input type="file" accept=".json,application/json" id="archivo"><p role="status" id="parte-previo">Expediente inicial del simulador.</p></details>
-<details><summary>Fuente y datos</summary><p>Organización, estaciones, medidas, costes y sucesos ficticios creados para esta actividad docente.</p><a href="https://csrc.nist.gov/pubs/ir/8286/a/r1/final" rel="noreferrer" target="_blank">NIST IR 8286A Rev. 1 · Registro del riesgo</a></details>
-</aside></div><p class="pie">Docencia · Gestión de riesgos y evaluación de vulnerabilidades</p></main></body></html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><title>Comité del boletín · Sierra Clara · 2026</title>
+<link rel="stylesheet" href="ops.css"><script type="module" src="comite.js"></script></head>
+<body><a class="skip" href="#contenido">Saltar al área de juego</a><div id="app"></div><noscript>Activa JavaScript para usar la consola docente. No requiere cuenta ni servicios externos.</noscript></body></html>
