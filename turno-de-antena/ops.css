@@ -6,3 +6,49 @@ header{padding:.8rem 1.5rem;border-bottom:1px solid var(--border);display:flex;f
 @media(max-width:650px){:root{font-size:17px}header,.titlebar{padding:.8rem}.toolbar{padding:.3rem .8rem}main{padding:0 .6rem 1rem}.notice{margin:.5rem .8rem}.two,.kanban,.sidebar{display:block}.board>section,.sidebar>section{padding:.8rem}nav a{font-size:.85rem;padding:.3rem}.course{margin-left:0}.row{align-items:stretch}.row button{flex:1}.network{min-width:550px}.graph-scroll{overflow:auto}.curve{min-width:500px}h1{font-size:1.6rem}td,th{padding:.4rem;font-size:.85rem}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 [hidden]{display:none!important}.workspace-nav{display:flex;gap:.3rem;flex-wrap:wrap;margin:0 0 .8rem}.workspace-nav button{font-size:.78rem;padding:.4rem .6rem}.workspace-nav button[aria-pressed=true]{border-bottom:3px solid var(--blue)}.console .evidence{padding:.35rem 0}.console .evidence .field{margin:.2rem 0}.console .evidence p{font-size:.92rem}.titlebar{padding-top:.6rem}.notice:empty{min-height:.2rem;margin:.2rem}.board .transfer{margin-top:1rem}.graph-scroll:focus-visible{outline:3px solid var(--amber)}
+
+/* Operational surfaces. Motion only shows a change; it never delays a decision. */
+header{padding:.55rem 1.4rem;background:#0b1222;gap:.4rem 1.5rem}
+.brand{letter-spacing:.025em}.titlebar{display:flex;flex-direction:column;padding-bottom:.25rem}
+main{gap:0;grid-template-columns:minmax(0,1fr) 310px}
+.board{padding-right:1.25rem}.sidebar{border-left:1px solid var(--border);padding-left:1.1rem}
+.board>section,.board>div.panel{border:0;border-top:1px solid var(--border);padding:1rem 1.15rem;background:var(--panel);margin-bottom:.7rem}
+.sidebar>section{border:0;background:transparent;padding:.8rem 0}
+.sidebar .log{background:transparent;border:0;border-top:1px solid var(--border);padding:.8rem 0}
+.log li{font-size:.86rem;line-height:1.5}.log li:last-child{border-bottom:2px solid var(--blue)}
+.mission{background:transparent!important;border:0!important;padding:.6rem 0 1rem!important}
+.mission h2{font-size:1.2rem}.mission p{color:var(--muted);max-width:78ch;font-size:.95rem}
+.workspace-nav{border-bottom:1px solid #71839a;gap:0;margin-bottom:0;align-items:stretch}
+.workspace-nav button{border:0;border-right:1px solid var(--border);background:transparent;padding:.65rem .8rem;flex:1;text-align:left;line-height:1.25}
+.workspace-nav button[aria-pressed=true]{background:var(--panel);border-bottom:3px solid var(--blue);font-weight:650}
+.workspace-nav #all-panels{flex:0 1 auto;font-size:.7rem;color:var(--muted)}
+.board>section>h2{padding-bottom:.65rem;border-bottom:1px solid var(--border)}
+.guard-timeline .evidence{position:relative;border-left:2px solid #7dd3fc;margin-left:.55rem;padding:.7rem 0 .7rem 1.2rem}
+.guard-timeline .evidence::before{content:'';position:absolute;left:-6px;top:1rem;width:10px;height:10px;background:#7dd3fc}
+.guard-timeline .number{display:block;font-size:.95rem;color:#e2e8f0}
+.guard-timeline .evidence p{margin:.25rem 0 .5rem;font-size:1rem;max-width:70ch}
+.guard-timeline .row{border-top:1px solid #335179;padding-top:.4rem}
+.guard-timeline .row button{font-size:.75rem;background:transparent;min-height:44px}
+.guard-timeline .row .field{flex:1 1 250px;font-size:.8rem}
+.network,.curve,.schedule-graph{border:0;background:#101a2d}
+.network{min-height:340px}.network .wire{stroke-width:3.5}.network .node-button rect{stroke:#7dd3fc;stroke-width:2}
+.network .node-button:hover rect,.network .node-button:focus rect{fill:#263f59}
+.network .wire:not(.broken){stroke-dasharray:9 3;animation:telemetry-flow .7s linear 1}
+.network rect.selected-node{stroke:var(--amber);stroke-width:4;fill:#30435e}
+.network .broken{stroke-width:4;stroke-dasharray:5 8}
+.curve{touch-action:pan-y;cursor:crosshair;min-height:310px}.curve:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.plot-legend{font-size:.85rem;color:var(--muted)}
+.schedule-graph{display:block;width:100%;height:auto;min-width:720px}
+.schedule-graph text{font-size:17px;font-family:Consolas,monospace}
+.schedule-graph rect{stroke:#7dd3fc;stroke-width:1}
+.order{border:0;border-left:3px solid var(--blue);background:#162235;padding:.7rem 1rem}
+.order .mono{font-size:.8rem}.order .row button{background:transparent}
+.coverage{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.coverage span{border:0;padding:.7rem .4rem;font-size:.9rem;background:var(--bg)}
+.coverage .good{box-shadow:inset 0 -3px var(--green)}.coverage .bad{box-shadow:inset 0 -3px var(--red)}
+.transfer{background:transparent!important;border-top:1px solid var(--border)!important}
+.timeline{border-left:0;border-bottom:2px solid var(--blue);padding:.8rem}.timeline span{border-right:1px solid var(--border);padding-right:1rem}
+@keyframes telemetry-flow{from{stroke-dashoffset:36}to{stroke-dashoffset:0}}
+@media(max-width:1000px){main{grid-template-columns:1fr}.board{padding-right:0}.sidebar{padding-left:0;border-left:0;border-top:1px solid var(--border)}}
+@media(max-width:650px){header{padding:.65rem .8rem}.workspace-nav button{flex:1 1 45%;font-size:.8rem}.guard-timeline .row{display:grid;grid-template-columns:1fr 1fr}.guard-timeline .row .field{grid-column:1/-1}.board>section{padding:.8rem}.network{min-height:0}.curve{min-height:0}.coverage{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.network .wire:not(.broken){animation:none}*,*::before,*::after{scroll-behavior:auto!important}}
