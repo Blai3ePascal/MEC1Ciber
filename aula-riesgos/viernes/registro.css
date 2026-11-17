@@ -1,0 +1,27 @@
+.reg-cases { display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1rem; }
+.reg-cases button { font:600 .83rem var(--mono); }
+.reg-sheet { border:1px solid var(--stroke); margin:1rem 0; }
+.reg-sheet .reg-line { display:grid; grid-template-columns:22% 26% minmax(0,1fr); border-bottom:1px solid var(--stroke); align-items:stretch; }
+.reg-line:last-child {border-bottom:0;}
+.reg-line>div {padding:.65rem .7rem; min-width:0; overflow-wrap:anywhere; }
+.reg-line .reg-col {font:600 .80rem var(--mono); color:var(--accent); background:#0e1928;}
+.reg-old {color:#cfb5a6;background:#211f23;border-inline:1px solid var(--stroke);font-size:.88rem;}
+.reg-new {background:#132533;}
+.reg-line .field {margin:0;display:block;}
+.reg-line select,.reg-line input {max-width:100%;font-size:.87rem;}
+.reg-unit {display:grid;grid-template-columns:minmax(52px,1fr) minmax(0,2.2fr);gap:.3rem;}
+.reg-corrected {background:#13282b;}
+.reg-review {border-inline-start:3px solid var(--accent);padding-left:.9rem;}
+.reg-diff {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--stroke);margin:.8rem 0;}
+.reg-diff>div {background:var(--dark);padding:.65rem;overflow-wrap:anywhere;}
+.reg-diff>div+div {border-left:1px solid var(--stroke);background:#142c32;}
+.reg-diff strong {display:block;font-size:1.15rem;line-height:1.27;margin:.25rem 0;}
+.reg-diff small {color:var(--muted);}
+.reg-full {width:100%;font:inherit;}
+.reg-prompt {margin:.55rem 0;}
+.reg-scope {font-family:var(--mono);color:var(--accent);}
+.reg-feed {list-style:none;padding:0;}
+.reg-feed li {border-bottom:1px solid var(--stroke);padding:.5rem 0;font-size:.86rem;}
+.reg-options {display:flex;align-items:flex-start;gap:.55rem;font-size:.9rem;margin:.4rem 0;}
+.reg-options input {accent-color:var(--accent);flex-shrink:0;}
+@media(max-width:750px){.reg-sheet .reg-line{grid-template-columns:32% minmax(0,1fr)}.reg-line .reg-new{grid-column:1/-1;border-top:1px solid var(--stroke)}.reg-old{border-right:0}.reg-cases button{font-size:.75rem}.reg-diff strong{font-size:1rem}}

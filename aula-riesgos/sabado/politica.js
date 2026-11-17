@@ -1,0 +1,1 @@
+"use strict";const PoliticaSC=(()=>{const e=Object.freeze([0,2.5,3.75,5,7.5]),t=Object.freeze([720,336,168,24,4]);return Object.freeze({bands:e,hours:t,band:function(n){if(!Number.isFinite(n)||n<0||n>10)return null;let r=0;for(;r+1<e.length&&n>=e[r+1];)r+=1;return t[r]},indice:(e,t,n)=>2.5*e+2.5*t+5*n})})();

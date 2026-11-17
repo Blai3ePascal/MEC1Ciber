@@ -1,0 +1,1 @@
+"use strict";const enlaceDestino=document.getElementById("destino");if(enlaceDestino){const e=new URL(enlaceDestino.href);e.origin===location.origin&&(e.search=location.search,e.hash=location.hash,location.replace(e.href))}

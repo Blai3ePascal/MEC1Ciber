@@ -1,1 +1,21 @@
-Edición docente para David Pacios Izquierdo, 2026. Escenarios y CSS propios. Mecánicas originales MEC1–MEC5 del docente, referencias conservadas fuera del despliegue. TLP 2.0: FIRST https://www.first.org/tlp/ . SHA-256: Web Crypto del navegador. Terser 5.44.1 BSD-2-Clause solo durante compilación. Sin bibliotecas remotas. Fuentes de método y atribuciones completas en la documentación docente.
+Aula de gestión de riesgos y vulnerabilidades · Sierra Clara
+Edición docente para David Pacios Izquierdo, 2026. Documentos, situaciones, interfaces y diagrama de red propios. La imagen del portal es una captura del simulador Mapa de cobertura. Mecánicas MEC1–MEC5 basadas en los ejercicios docentes originales.
+
+La organización visual toma como referencia la economía de espacio, jerarquía y navegación de Lichess (https://lichess.org/). El CSS del aula está escrito para este proyecto.
+
+Fuentes de método del viernes
+Microsoft: boletín histórico MS17-010 — https://learn.microsoft.com/es-es/security-updates/securitybulletins/2017/ms17-010
+National Audit Office: Investigation: WannaCry cyber attack and the NHS — https://www.nao.org.uk/reports/investigation-wannacry-cyber-attack-and-the-nhs/
+MAGERIT v3, libro 1: Método — https://www.hacienda.gob.es/SGT/CATALOGO_SEFP/046_Magerit_v3_libro1_metodo.pdf
+MAGERIT v3, libro 3: Guía de técnicas — https://www.hacienda.gob.es/Documentacion/Publico/SGT/CATALOGO_SEFP/048_Magerit_v3_libro3.pdf
+NIST: Guide for Conducting Risk Assessments — https://csrc.nist.gov/pubs/sp/800/30/r1/final
+
+Fuentes de método del sábado
+FIRST: CVSS v4.0 — https://www.first.org/cvss/v4.0/specification-document
+FIRST: Exploit Prediction Scoring System — https://www.first.org/epss/faq
+CISA: Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+FIRST: Traffic Light Protocol 2.0 — https://www.first.org/tlp/
+NIST: Secure Hash Standard (SHA-256) — https://doi.org/10.6028/NIST.FIPS.180-4
+NIST: Guide to Enterprise Patch Management Planning — https://doi.org/10.6028/NIST.SP.800-40r4
+
+La bibliografía completa de las dos sesiones se encuentra también al final de las presentaciones. Terser 5.44.1 (BSD-2-Clause) se emplea al compilar los scripts. Se sirven los archivos generados desde el propio sitio.
