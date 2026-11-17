@@ -1,7 +1,9 @@
 Aula de gestión de riesgos y vulnerabilidades · Sierra Clara
-Edición docente para David Pacios Izquierdo, 2026. Documentos, situaciones, interfaces y diagrama de red propios. La imagen del portal es una captura del simulador Mapa de cobertura. Mecánicas MEC1–MEC5 basadas en los ejercicios docentes originales.
+Edición docente para David Pacios Izquierdo, 2026. Documentos, situaciones, interfaces y diagrama de red propios. Fotografía de portada: USGS, New England Water Science Center, “Precipitation measurement and sampling at a meteorological platform”, 3 mar. 2021, Sleepers River, Vermont. Dominio público. https://www.usgs.gov/media/images/precipitation-measurement-and-sampling-a-meteorological-platform. Los diez esquemas de los instrumentos están dibujados para el aula. Mecánicas MEC1–MEC5 basadas en los ejercicios docentes originales.
 
-La organización visual toma como referencia la economía de espacio, jerarquía y navegación de Lichess (https://lichess.org/). El CSS del aula está escrito para este proyecto.
+El escritorio de los cinco simuladores del viernes se inspira en las vistas de gestión de riesgos del producto Bizzmine: https://www.bizzmine.com/es/soluciones/gestion-de-riesgos/. Las capturas del fabricante se consultaron como referencia. Los iconos, los esquemas, los controles y los estilos de Sierra Clara son propios.
+
+El portal y los cinco instrumentos del sábado toman como referencia la economía de espacio, jerarquía y navegación de Lichess (https://lichess.org/). La organización de consolas y paneles del sábado también se inspira en Hacknet (https://www.hacknet-os.com/). El CSS y la iconografía del aula están escritos para este proyecto.
 
 Fuentes de método del viernes
 Microsoft: boletín histórico MS17-010 — https://learn.microsoft.com/es-es/security-updates/securitybulletins/2017/ms17-010
@@ -19,3 +21,9 @@ NIST: Secure Hash Standard (SHA-256) — https://doi.org/10.6028/NIST.FIPS.180-4
 NIST: Guide to Enterprise Patch Management Planning — https://doi.org/10.6028/NIST.SP.800-40r4
 
 La bibliografía completa de las dos sesiones se encuentra también al final de las presentaciones. Terser 5.44.1 (BSD-2-Clause) se emplea al compilar los scripts. Se sirven los archivos generados desde el propio sitio.
+
+Composición de los informes individuales en PDF
+pdf-lib 1.17.1, Andrew Dillon, MIT. Texto de licencia en vendor/pdf-lib-LICENCIA.txt.
+@pdf-lib/fontkit 1.1.1, derivado de fontkit de Devon Govett, MIT. Texto de licencia en vendor/fontkit-LICENCIA.txt.
+DejaVu Sans, basada en Bitstream Vera. Condiciones de redistribución en vendor/DejaVu-LICENCIA.txt.
+Los diez modelos resueltos de ejemplos/ son casos docentes del aula. Se pueden abrir desde los enlaces del README y consultar desde cada puesto.
