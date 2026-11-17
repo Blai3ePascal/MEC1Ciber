@@ -121,3 +121,32 @@ body[data-puesto] :focus-visible {outline:3px solid #ffce75;outline-offset:3px;}
 @media(max-width:720px) {
   body[data-puesto] .stages span {flex:1 1 auto;min-width:0;max-width:100%;overflow-wrap:anywhere;}
 }
+/* Pistas en el mismo contexto de lectura. El signo de ayuda es independiente de la acción. */
+body[data-puesto] .sc-context-lookup {
+  display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;
+  min-width:1.35rem;min-height:1.45rem;margin-inline:.16rem .25rem;
+  color:var(--sc-accent);border:1px dotted currentColor;
+  font:700 .75rem/1 var(--sc-mono);cursor:help;text-decoration:none;
+}
+.sc-context-lookup::before {content:'?';}
+.qhse[data-puesto] .sc-context-lookup {color:#075569;}
+body[data-puesto] .sc-context-lookup:hover {border-style:solid;}
+.sc-context-pair {
+  display:inline-grid;grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;vertical-align:middle;max-width:100%;min-width:0;
+}
+.sc-context-pair > :first-child {min-width:0;max-width:100%;}
+.sc-context-field {display:grid;}
+.sc-context-pair > .sc-context-lookup {align-self:center;justify-self:end;flex:none;}
+.sc-context-pair > .sc-tool {height:100%;}
+.sc-lex-choices {max-height:19rem;overflow-y:auto;}
+.sc-lex-scope {margin:0;padding:5px 18px 0;font:600 .78rem/1.5 var(--sc-sans);}
+body[data-puesto] .sc-lex-all {margin:0 .3rem .2rem;padding:2px 5px;background:none;border:0;color:inherit;font:inherit;text-decoration:underline;}
+.sc-lex-scope[hidden] {display:none;}
+@media(max-width:490px) {
+  .sc-lex-layout {display:flex;flex-direction:column;}
+  .sc-lex-choices {order:2;max-height:7.2rem;overflow-y:auto;}
+  .sc-definition {order:1;}
+  .sc-lex-scope {padding:4px 12px 0;}
+}
+@media (pointer:coarse) {body[data-puesto] .sc-context-lookup {min-width:24px;min-height:24px;}}

@@ -124,3 +124,9 @@ body.qhse[data-puesto] header {position:relative;z-index:1;background:#087ba2;bo
   .qhse[data-puesto] .tbl :is(th,td) {padding:4px 3px;font-size:.77rem;}
 }
 @media(max-width:400px) {.qhse[data-puesto] .mast-control button {font-size:.70rem;padding-inline:5px;}}
+.qhse[data-puesto="comite"] .panelitem[data-job] > :is(.label,strong,.help) {
+  display:block;
+}
+.qhse[data-puesto="comite"] .panelitem[data-job] > strong {
+  margin-block:.2rem;
+}
