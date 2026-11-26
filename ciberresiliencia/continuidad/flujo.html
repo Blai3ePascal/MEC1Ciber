@@ -115,3 +115,185 @@ else{const old=makeReport;makeReport=function(){old();appendReport('report')};wi
 render();window.continuidadApplied={config:cfg,state:()=>JSON.parse(JSON.stringify(st)),report};
 })();
 </script>
+
+<!-- Vocabulario contextual: accesible, local, independiente del motor. -->
+<script>
+(()=>{'use strict';
+/* Definitions are local. This layer never changes an order, score or saved game. */
+const additions=[{"term":"Ciberresiliencia","definition":"Capacidad de anticipar un problema digital, seguir prestando lo esencial mientras ocurre, recuperar el servicio y aprender para la próxima vez.","example":"Si falla el sistema de préstamos, la biblioteca mantiene una salida controlada en papel y después comprueba que los libros y el registro coinciden.","aliases":[],"games":[]},{"term":"Ciberseguridad","definition":"Protección de los sistemas, los datos y los servicios frente a usos no autorizados, alteraciones e interrupciones.","example":"Una cuenta con permisos limitados reduce lo que puede hacer quien consiga robarla.","aliases":["Cybersecurity"],"games":[]},{"term":"Continuidad","definition":"Forma prevista de mantener las actividades importantes cuando falla la manera habitual de trabajar.","example":"Una taquilla puede seguir vendiendo con un procedimiento alternativo, aunque su aplicación principal esté caída.","aliases":["continuidad del negocio"],"games":[]},{"term":"Recuperación","definition":"Restablecimiento comprobado del servicio y de las condiciones acordadas para utilizarlo.","example":"Encender el servidor es un paso; comprobar que una reserva se guarda una sola vez permite saber si el servicio vuelve a funcionar.","aliases":["recuperaciones","recovery","disaster recovery","data recovery","event recovery"],"games":[]},{"term":"Restauración","definition":"Proceso de reconstruir datos o sistemas a partir de una copia conservada. Después hay que comprobar que sirven para trabajar.","example":"Recuperáis la base de reservas de las 11:25 y aplicáis los cambios posteriores que se conservaron.","aliases":["restaurar"],"games":[]},{"term":"Servicio mínimo","definition":"Nivel de trabajo que la organización considera indispensable durante una interrupción. Puede exigir cantidad, plazo, calidad y prioridades a la vez.","example":"Enviar las siete cargas urgentes no basta si el encargo exige también completar al menos catorce órdenes.","aliases":["mínimo de servicio","mínimos de servicio"],"games":[]},{"term":"Riesgo","definition":"Posibilidad de que un suceso perjudique un objetivo, considerando tanto qué podría ocurrir como sus consecuencias.","example":"Aunque hoy el directorio funcione, hay que valorar qué pasaría si dejara de autorizar órdenes durante el embarque.","aliases":["riesgos"],"games":[]},{"term":"Salvaguarda","definition":"Medida que reduce la posibilidad de un problema o sus consecuencias. Puede ser técnica, física u organizativa.","example":"Una lista de permisos preparada de antemano permite autorizar trabajo cuando falla el directorio central.","aliases":["salvaguardas"],"games":[]},{"term":"Control","definition":"Medida que modifica un riesgo o ayuda a comprobar que se cumplen unas condiciones. Debe tener un propósito y probarse.","example":"La prueba de reserva y relectura comprueba algo más útil que mirar si la portada de la aplicación carga.","aliases":["controles"],"games":[]},{"term":"Capacidad","definition":"Cantidad máxima de trabajo que una parte del sistema puede realizar en el intervalo indicado.","example":"Un canal que permite diez órdenes por ventana no puede transportar veinte solo porque esas veinte sean urgentes.","aliases":["capacidades"],"games":[]},{"term":"Cuello de botella","definition":"Parte que limita lo que puede completar el conjunto, aunque otras tengan capacidad libre.","example":"Si la red transporta dieciséis órdenes pero solo se pueden autorizar catorce, el permiso limita la salida a catorce.","aliases":["cuellos de botella"],"games":[]},{"term":"Ventana","definition":"Intervalo de tiempo que se simula en una ronda. Su duración y reglas aparecen en cada juego.","example":"En Puerto de guardia, una ventana representa diez minutos de operación.","aliases":["ventanas","ventana de tiempo"],"games":[]},{"term":"Pronóstico","definition":"Resultado que calculáis o esperáis antes de ejecutar la prueba. Sirve para comparar vuestra idea con lo que ocurre.","example":"Antes de despachar, sumáis la capacidad de las vías y la limitáis por la autorización disponible.","aliases":["pronósticos"],"games":[]},{"term":"Supuesto","definition":"Condición que se da por válida en el modelo para poder razonar. Si cambia, puede cambiar el resultado.","example":"Que el directorio responda es un supuesto del primer ensayo. La revancha permite comprobar qué ocurre cuando falla.","aliases":["supuestos"],"games":[]},{"term":"Ensayo","definition":"Prueba de una decisión en unas condiciones conocidas, con un resultado que se puede observar.","example":"Compráis una alternativa y la probáis antes de atribuirle una reducción de las interrupciones.","aliases":["ensayos","ensayar"],"games":[]},{"term":"Eficacia","definition":"Grado en que una medida consigue el resultado previsto en las condiciones comprobadas.","example":"La ruta alternativa es eficaz para el mínimo si transporta las órdenes necesarias dentro del plazo.","aliases":["eficaz","eficaces","efectividad"],"games":[]},{"term":"Evidencia","definition":"Información comprobable que sirve para sostener una afirmación. Hay que conservar su origen y entender sus límites.","example":"Un recibo demuestra lo que llegó al cliente; una luz encendida solo demuestra que ese equipo tenía alimentación.","aliases":["evidencias"],"games":[]},{"term":"Trazabilidad","definition":"Posibilidad de seguir qué ocurrió, con qué elemento, cuándo y quién intervino.","example":"Un resguardo numerado ayuda a relacionar una salida física con la anotación que se incorpora después.","aliases":["trazable"],"games":[]},{"term":"Responsable","definition":"Persona o área que debe decidir, responder del resultado y mantener el seguimiento.","example":"El área de taquilla confirma que la venta vuelve a funcionar; el equipo técnico aporta las pruebas.","aliases":["responsables"],"games":[]},{"term":"Incidente","definition":"Suceso que compromete o amenaza la seguridad o el funcionamiento esperado y requiere una actuación organizada.","example":"Un borrado que impide asignar las reservas necesita identificación, contención y recuperación.","aliases":["incidentes"],"games":[]},{"term":"Plan de respuesta","definition":"Acuerdo previo sobre quién actúa, cómo se avisa y qué pasos se siguen ante un incidente.","example":"Dejar claro a quién llamar evita que cada persona espere a que otra comunique el problema.","aliases":["plan de respuesta a incidentes","respuesta a incidentes","Incident Response","Incident Response Management"],"games":[]},{"term":"CIS Controls","definition":"Conjunto priorizado de buenas prácticas de seguridad. Incluye medidas técnicas y también aspectos de organización, formación y respuesta.","example":"Proteger las copias, formar al personal y preparar la respuesta atienden problemas distintos que se complementan.","aliases":["CIS","CIS Control"],"games":[]},{"term":"NIST","definition":"Instituto Nacional de Estándares y Tecnología de Estados Unidos. Publica guías y marcos que ayudan a organizar y evaluar la ciberseguridad.","example":"Un marco de NIST puede ayudar a ordenar resultados deseados; no sustituye la decisión concreta de quién mantiene el embarque.","aliases":[],"games":[]},{"term":"NIST CSF","definition":"Cybersecurity Framework, marco de ciberseguridad de NIST. Su versión 2.0 organiza resultados mediante gobernar, identificar, proteger, detectar, responder y recuperar.","example":"Podéis relacionar la preparación de permisos con proteger y la prueba de reapertura con recuperar.","aliases":["CSF","CSF 2.0"],"games":[]},{"term":"Framework","definition":"Marco de trabajo que organiza ideas, objetivos o prácticas. No suele ser una receta que se aplique igual a todas las organizaciones.","example":"NIST CSF ayuda a ordenar lo que se quiere conseguir; el plan de vuestra organización concreta responsables y acciones.","aliases":["frameworks","marco de trabajo"],"games":[]},{"term":"PDF","definition":"Portable Document Format, formato de documento que conserva la composición de las páginas.","example":"El parte en PDF permite guardar las decisiones y resultados para revisarlos después.","aliases":[],"games":[]},{"term":"JSON","definition":"JavaScript Object Notation, formato de texto para guardar datos mediante nombres y valores.","example":"Una exportación JSON puede guardar el estado de la partida para que un programa vuelva a leerlo.","aliases":[],"games":[]},{"term":"Urgentes","definition":"Trabajos cuyo plazo vence antes y que deben priorizarse según las reglas del encargo.","example":"Una carga refrigerada puede perder su utilidad si espera a la siguiente salida.","aliases":["urgente","urgencia","urgencias"],"games":[]},{"term":"Política de cola","definition":"Regla que determina qué trabajo pasa primero cuando no se puede atender todo a la vez.","example":"Por llegada atiende según el orden de entrada; urgentes primero da prioridad a los plazos críticos.","aliases":["disciplina de cola"],"games":[]},{"term":"FIFO","definition":"First In, First Out: lo primero que entra es lo primero que sale. Es una regla de atención por orden de llegada.","example":"El lote que llegó antes pasa antes que otro posterior, aunque este último sea urgente.","aliases":["por llegada","por antigüedad"],"games":[]},{"term":"Cola","definition":"Trabajo que está esperando porque todavía no ha podido pasar al siguiente paso.","example":"Los lotes pueden acumularse antes de la prensa o antes de registrar la expedición.","aliases":["colas"],"games":[]},{"term":"P95","definition":"Percentil 95. Se ordenan los tiempos de los lotes expedidos y se toma la posición que alcanza el 95 % de ellos. Los lotes que siguen esperando se contabilizan aparte.","example":"En diez lotes ordenados, el juego usa la posición redondeada hacia arriba de 0,95 × 10: la décima. Por eso también hay que mirar la cola pendiente.","aliases":["percentil 95"],"games":[]},{"term":"Percentil","definition":"Valor que marca una posición al ordenar un conjunto de datos. Sirve para mirar cómo se reparten los resultados, además de la media.","example":"El percentil 95 señala un tiempo que alcanza al menos el 95 % de los lotes expedidos.","aliases":["percentiles"],"games":[]},{"term":"Lote","definition":"Grupo de unidades que se procesa y registra como un trabajo en el modelo.","example":"Cada lote que sale de la prensa necesita su registro antes de considerarse expedido.","aliases":["lotes"],"games":["flujo"]},{"term":"Prensa","definition":"Máquina que aplica fuerza para dar forma al material. En este juego es un puesto de producción con capacidad limitada.","example":"Cada persona asignada a la prensa procesa dos lotes por minuto según las reglas del tablero.","aliases":["prensas"],"games":["flujo"]},{"term":"Laminación","definition":"Proceso industrial que transforma el material al hacerlo pasar entre rodillos. El juego simplifica esa operación para estudiar continuidad y colas.","example":"Aunque la parte industrial tenga capacidad, el registro de salidas puede limitar la expedición.","aliases":[],"games":["flujo"]},{"term":"Cotejo","definition":"Comparación entre dos registros para comprobar que se refieren a la misma operación y coinciden.","example":"Se compara el resguardo local con el registro central para evitar olvidar o duplicar una salida.","aliases":[],"games":[]},{"term":"Resguardo","definition":"Justificante local que acredita una operación realizada y permite registrarla o comprobarla después.","example":"Cuando el sistema central está aislado, se conserva un resguardo de cada lote expedido.","aliases":["resguardos"],"games":[]},{"term":"Talonario numerado","definition":"Cuaderno de justificantes con números distintos y consecutivos que permiten seguir las operaciones.","example":"Es más lento de rellenar que un papel libre en el modelo, pero permite cotejar después más resguardos por persona.","aliases":[],"games":[]},{"term":"Conciliación","definition":"Comprobación de que dos registros o el registro y la realidad vuelven a coincidir, resolviendo pérdidas y duplicados.","example":"Después de trabajar en papel, comparáis los lotes que salieron con las salidas guardadas en el sistema central.","aliases":["reconciliación","conciliar","reconciliar","conciliadas","cotejar","conciliadas","conciliados","reconciliados","reconciliadas","por reconciliar"],"games":[]},{"term":"Expedición","definition":"Salida registrada de un producto o pedido hacia su destino.","example":"Producir un lote no equivale a expedirlo: todavía necesita completar el registro de salida.","aliases":["expediciones","expedidos","expedid"],"games":["flujo","restauracion"]},{"term":"Sistema central","definition":"Registro o servicio compartido del que depende normalmente el trabajo de varios puestos.","example":"Si el registro central queda aislado, los puestos pueden necesitar justificantes locales para continuar.","aliases":["registro central"],"games":[]},{"term":"Relevo","definition":"Traspaso de una tarea entre personas o equipos, con lo que funciona, lo que falta y quién debe continuar.","example":"El siguiente turno recibe un acta con pruebas, pendientes y condiciones para cerrar el incidente.","aliases":[],"games":[]},{"term":"Revancha","definition":"Repetición comparativa de un caso con una condición modificada. Permite comprobar qué parte del plan dependía de ella.","example":"Repetís el plan anterior y comparáis el resultado antes de ajustar la decisión.","aliases":["repetición comparativa"],"games":[]},{"term":"min","definition":"Abreviatura de minutos. Conviene distinguir el tiempo de una fase del tiempo total transcurrido.","example":"Preparar durante treinta minutos y restaurar durante veinte ya consume cincuenta minutos.","aliases":["min."],"games":[]},{"term":"pers.","definition":"Abreviatura de personas asignadas a un puesto.","example":"Dos pers. en registro significa que dos de las seis personas disponibles se dedican a registrar los lotes.","aliases":[],"games":[]},{"term":"Disponibilidad","definition":"Posibilidad de acceder a la información o utilizar un servicio cuando se necesita y con las condiciones requeridas.","example":"La biblioteca puede estar físicamente abierta mientras su catálogo digital no está disponible.","aliases":[],"games":[]},{"term":"Certificación","definition":"Evaluación por la que se reconoce que un alcance concreto cumple unos requisitos. No significa ausencia de incidentes.","example":"Una certificación de un sistema de gestión debe leerse junto a su alcance y condiciones.","aliases":["certificaciones","certificado"],"games":[]},{"term":"Copia aislada","definition":"Copia protegida para que un fallo o una cuenta comprometida en el sistema principal no puedan modificarla por el mismo camino. Debe ser recuperable y estar probada.","example":"Si la cuenta que borra las reservas también puede borrar todas sus copias, todavía hay un problema compartido. Separáis permisos y mantenéis una versión protegida.","aliases":["copias aisladas"],"games":[]},{"term":"Albarán","definition":"Documento que deja constancia de una entrega de mercancía. Permite contrastar qué salió y qué recibió la otra parte.","example":"Antes de repetir un pedido aparentemente perdido, revisáis su albarán para no enviar dos veces la misma mercancía.","aliases":["albaranes"],"games":[]},{"term":"Extrusión","definition":"Proceso industrial que hace pasar un material por una abertura para darle una forma continua.","example":"El informe de Hydro habla de unidades de extrusión. La planta de laminación del juego es una recreación docente distinta y sus cifras no son las de aquella noticia.","aliases":[],"games":["flujo"]},{"term":"Índice de folios","definition":"Relación de las hojas o justificantes numerados para poder localizar y contrastar cada operación.","example":"Cuando vuelve la aplicación, el número de cada resguardo os ayuda a comprobar si ya se registró sin contarlo dos veces.","aliases":[],"games":["flujo"]},{"term":"Ciberataque","definition":"Acción intencionada contra sistemas, información o servicios digitales para acceder, alterar, interrumpir o causar otro perjuicio.","example":"Un ataque puede obligar a trabajar con registros manuales; la continuidad busca mantener el servicio esencial mientras se responde.","aliases":["ciberataques","cyber attack","cyber-attack"],"games":[]},{"term":"BIA","definition":"Business Impact Analysis, o análisis de impacto en el negocio. Estudia qué actividades importan, qué daño produce interrumpirlas y cuánto tiempo puede tolerarse.","example":"En el puerto se transforma en un encargo concreto: sacar un mínimo de órdenes y todas las urgentes antes de que salga el barco.","aliases":["análisis de impacto en el negocio"],"games":[]},{"term":"Riesgo residual","definition":"Riesgo que permanece después de aplicar las medidas. Cumplir un mínimo no hace desaparecer todo lo pendiente.","example":"Con la alternativa salen dieciséis de veinte órdenes. Las cuatro restantes todavía necesitan una decisión y seguimiento.","aliases":["riesgos residuales"],"games":[]},{"term":"Dependencia","definition":"Elemento que debe funcionar para que otra actividad pueda realizarse.","example":"La taquilla necesita tanto datos de reservas como una identidad autorizada para vender.","aliases":["dependencias"],"games":[]}];
+const normalize=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').replace(/\s+/g,' ').trim();
+const byId=new Map(),aliases=new Map();
+function add(item){
+ const id=normalize(item.term);const previous=byId.get(id);
+ const record={term:item.term,definition:item.definition,example:item.example||'',aliases:[...new Set([item.term,...(previous?.aliases||[]),...(item.aliases||[])])]};
+ byId.set(id,record);
+ for(const a of record.aliases)aliases.set(normalize(a),id);
+}
+for(const [term,definition] of Object.entries(window.continuidadApplied?.config?.gloss||{}))add({term,definition});
+for(const item of additions)add(item);
+// A canonical entry superseded by a more helpful alias need not appear twice.
+for(const [id,r] of byId)if(aliases.get(id)!==id)byId.delete(id);
+const records=[...byId.entries()].sort((a,b)=>a[1].term.localeCompare(b[1].term,'es'));
+function patternPart(s){return normalize(s).replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/[aeioun]/g,c=>({a:'[aá]',e:'[eé]',i:'[ií]',o:'[oó]',u:'[uúü]',n:'[nñ]'}[c])).replace(/ /g,'\\s+');}
+const pattern=new RegExp('(?<![\\p{L}\\p{N}_])('+[...aliases.keys()].sort((a,b)=>b.length-a.length).map(patternPart).join('|')+')(?![\\p{L}\\p{N}_])','giu');
+function matches(s){pattern.lastIndex=0;return [...String(s).matchAll(pattern)].map(m=>({text:m[0],index:m.index,id:aliases.get(normalize(m[0]))})).filter(m=>m.id);}
+function idsIn(s){return [...new Set(matches(s).map(m=>m.id))];}
+function surfaceText(node){const w=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);const parts=[];let n;while((n=w.nextNode()))parts.push(n.textContent);return parts.join(' ');}
+const style=document.createElement('style');style.id='continuidad-vocabulary-style';
+style.textContent=`
+.lex-term.lex-term{font:inherit!important;letter-spacing:inherit!important;text-transform:inherit!important;font-weight:inherit!important;color:inherit!important;background:transparent!important;border:0!important;border-bottom:1px dotted currentColor!important;padding:0!important;margin:0!important;border-radius:0!important;box-shadow:none!important;display:inline!important;line-height:inherit!important;cursor:help;vertical-align:baseline;min-width:0;min-height:0;max-width:100%;text-align:inherit}
+.lex-term.lex-term:hover{border-bottom-style:solid!important;text-decoration:underline;text-underline-offset:3px}
+.lex-term.lex-term:focus-visible,.lex-help:focus-visible,.lex-svg:focus-visible{outline:3px solid #ead38d!important;outline-offset:3px!important}
+.lex-pair{display:inline-flex;align-items:stretch;gap:3px;max-width:100%;vertical-align:middle;min-width:0}
+.lex-pair>button:not(.lex-help),.lex-pair>label,.lex-pair>a,.lex-pair>select,.lex-pair>summary{min-width:0;flex:1;overflow-wrap:anywhere;white-space:normal}
+.lex-pair .lex-help.lex-help{flex:0 0 24px;min-width:24px;width:24px;padding:2px!important;margin:0!important;border:1px solid #607d82!important;border-radius:0!important;background:#1c3942!important;color:#d9eeee!important;font:700 13px/1.2 Arial,sans-serif!important;cursor:help;box-shadow:none!important;align-self:center;min-height:24px}
+.lex-svg{cursor:help;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}
+.lex-reading-guide{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0 12px;padding:7px clamp(16px,4.3vw,62px);border-top:1px solid #527078;border-bottom:1px solid #527078;font-size:13px;line-height:1.4;color:#d8e5e5;background:#132c35}
+.lex-reading-guide p{margin:0!important;font-size:13px!important}.lex-reading-guide button{font-size:13px!important;padding:5px 9px!important;white-space:nowrap;background:#24444e!important;color:#fff!important;border:1px solid #88a5aa!important}.lex-reading-guide button:hover{background:#315761!important}
+#lex-dialog{box-sizing:border-box;width:min(760px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:88dvh;padding:0;border:2px solid #8aaeb2;border-radius:0;background:#132c35;color:#edf1ee;box-shadow:0 12px 50px #0009;font:18px/1.55 Arial,sans-serif}
+#lex-dialog::backdrop{background:#071218bd}
+#lex-dialog .lex-shell{padding:22px 26px 26px}
+#lex-dialog .lex-top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #56767e;padding-bottom:12px;margin-bottom:18px}
+#lex-dialog .lex-kicker{font:700 13px/1.4 Arial,sans-serif;color:#b9d7d8;letter-spacing:.05em}
+#lex-dialog button{margin:0;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;border:1px solid #88a5aa;background:#24444e;color:#fff;border-radius:0;font:inherit;line-height:1.3;padding:8px 12px;cursor:pointer;box-shadow:none}
+#lex-dialog button:hover{background:#315761}#lex-dialog button:focus-visible,#lex-dialog input:focus-visible{outline:3px solid #f1d693;outline-offset:3px}
+#lex-dialog #lex-close{white-space:nowrap;font-size:16px}
+#lex-dialog h2{font:700 28px/1.2 Arial,sans-serif;margin:0 0 16px;color:#f5f4ed;overflow-wrap:anywhere}
+#lex-dialog p{font:inherit;line-height:1.55;margin:0 0 18px}
+#lex-dialog .lex-example{border-left:4px solid #c2b77b;padding-left:15px;color:#e8e5cf}
+#lex-dialog .lex-example b{display:block;margin-bottom:5px}
+#lex-dialog .lex-search-label{display:block;margin:14px 0 6px;font-size:15px;font-weight:700}
+#lex-dialog input{box-sizing:border-box;width:100%;padding:11px 12px;border:1px solid #8eb5bc;border-radius:0;background:#0b1f28;color:#fff;font:18px/1.3 Arial,sans-serif;min-width:0}
+#lex-dialog .lex-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+#lex-dialog .lex-actions button{font-size:15px}
+#lex-dialog .lex-results{display:grid;gap:0;margin-top:15px;border-top:1px solid #4d6a73}
+#lex-dialog .lex-results button{text-align:left;border:0;border-bottom:1px solid #4d6a73;background:transparent;padding:11px 4px;color:#def0ef;display:block;width:100%}
+#lex-dialog .lex-results button:hover{background:#24444e}
+#lex-dialog .lex-results small{display:block;font-size:14px;font-weight:400;line-height:1.4;color:#bcd1d4;margin-top:3px}
+#lex-dialog .lex-count{font-size:14px;color:#b8cccf;margin:10px 0}
+#lex-dialog.lex-large{font-size:23px}#lex-dialog.lex-large h2{font-size:34px}#lex-dialog.lex-large .lex-results small{font-size:19px}#lex-dialog.lex-large input{font-size:22px}
+@media(max-width:600px){#lex-dialog .lex-shell{padding:16px}#lex-dialog h2{font-size:25px}.lex-reading-guide{align-items:flex-start;flex-direction:column}.lex-reading-guide p{max-width:100%}.lex-pair{max-width:100%}.lex-pair .lex-help.lex-help{flex-basis:22px;min-width:22px;width:22px}}
+@media print{.lex-help,.lex-reading-guide,#lex-dialog{display:none!important}.lex-pair{display:contents}.lex-term.lex-term{border:0!important;text-decoration:none!important;color:inherit!important}}
+`;
+document.head.append(style);
+const dialog=document.createElement('dialog');dialog.id='lex-dialog';dialog.setAttribute('aria-labelledby','lex-heading');dialog.setAttribute('aria-describedby','lex-definition');
+dialog.innerHTML='<div class="lex-shell"><div class="lex-top"><span class="lex-kicker">VOCABULARIO DEL JUEGO</span><button type="button" id="lex-close">Cerrar y volver</button></div><div id="lex-content"></div><label class="lex-search-label" for="lex-search">Buscar un término o una sigla</label><input id="lex-search" type="search" autocomplete="off" spellcheck="false" placeholder="Por ejemplo: RTO, cotejo, hash…"><div id="lex-search-results"></div><div class="lex-actions"><button type="button" id="lex-back" hidden>Definición anterior</button><button type="button" id="lex-all">Ver todo el glosario</button><button type="button" id="lex-size" aria-pressed="false">Texto grande</button></div></div>';
+document.body.append(dialog);
+const content=dialog.querySelector('#lex-content'),search=dialog.querySelector('#lex-search'),results=dialog.querySelector('#lex-search-results');
+let returnFocus=null,currentIds=[],isLarge=false,history=[];
+try{isLarge=localStorage.getItem('continuidad.vocabulario.texto-grande')==='1'}catch{}
+function setSize(){dialog.classList.toggle('lex-large',isLarge);dialog.querySelector('#lex-size').setAttribute('aria-pressed',String(isLarge));dialog.querySelector('#lex-size').textContent=isLarge?'Tamaño normal':'Texto grande';}
+setSize();
+function el(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n;}
+function showDefinition(id,remember=true){
+ const r=byId.get(id);if(!r)return;
+ if(remember&&currentIds.length===1&&currentIds[0]!==id)history.push(currentIds[0]);
+ currentIds=[id];content.replaceChildren();const h=el('h2',r.term);h.id='lex-heading';h.tabIndex=-1;content.append(h);
+ const p=el('p',r.definition);p.id='lex-definition';content.append(p);
+ if(r.example){const ex=el('p',undefined,'lex-example');ex.append(el('b','Ejemplo en la práctica'),document.createTextNode(r.example));content.append(ex);}
+ for(const p of content.querySelectorAll('p')){
+  const walk=document.createTreeWalker(p,NodeFilter.SHOW_TEXT);const nodes=[];let n;while((n=walk.nextNode()))if(n.parentElement.tagName!=='B')nodes.push(n);
+  for(const node of nodes){const found=matches(node.textContent).filter(x=>x.id!==id);if(!found.length)continue;let at=0;const frag=document.createDocumentFragment();for(const m of found){frag.append(document.createTextNode(node.textContent.slice(at,m.index)));const b=el('button',m.text,'lex-term');b.type='button';b.dataset.lexPick=m.id;frag.append(b);at=m.index+m.text.length;}frag.append(document.createTextNode(node.textContent.slice(at)));node.replaceWith(frag);}
+ }
+ dialog.querySelector('#lex-back').hidden=!history.length;results.replaceChildren();search.value='';if(dialog.open)h.focus({preventScroll:true});
+}
+function showList(ids,title){
+ currentIds=ids;content.replaceChildren();const h=el('h2',title||'Glosario del juego');h.id='lex-heading';h.tabIndex=-1;content.append(h);
+ const p=el('p','Elegid una palabra para leer su significado y un ejemplo. Consultar esta ayuda no ejecuta ninguna orden.');p.id='lex-definition';content.append(p);drawList(ids);search.value='';
+}
+function drawList(ids){
+ results.replaceChildren();const count=el('p',ids.length+' '+(ids.length===1?'término':'términos'),'lex-count');count.setAttribute('role','status');results.append(count);
+ if(!ids.length){results.append(el('p','No aparece ese término. Probad con la sigla, una parte de la palabra o su significado.'));return;}
+ const list=el('div',undefined,'lex-results');for(const id of ids){const r=byId.get(id),b=el('button',r.term);b.type='button';b.dataset.lexPick=id;const short=r.definition.length>100?r.definition.slice(0,97).replace(/\s+\S*$/,'')+'…':r.definition;b.append(el('small',short));list.append(b);}results.append(list);
+}
+function open(ids,trigger){
+ const valid=[...new Set((ids||[]).filter(id=>byId.has(id)))];returnFocus=trigger||document.activeElement;
+ history=[];currentIds=[];dialog.querySelector('#lex-back').hidden=true;
+ if(valid.length===1)showDefinition(valid[0]);else showList(valid.length?valid:records.map(([id])=>id),valid.length?'Términos de este control':'Glosario del juego');
+ if(!dialog.open)dialog.showModal();if(returnFocus?.setAttribute)returnFocus.setAttribute('aria-expanded','true');
+ dialog.querySelector('#lex-close').focus({preventScroll:true});
+}
+function close(){dialog.close();}
+dialog.querySelector('#lex-close').addEventListener('click',close);
+dialog.querySelector('#lex-back').addEventListener('click',()=>{const id=history.pop();if(id)showDefinition(id,false)});
+dialog.querySelector('#lex-all').addEventListener('click',()=>{showList(records.map(([id])=>id));search.focus({preventScroll:true});});
+dialog.querySelector('#lex-size').addEventListener('click',()=>{isLarge=!isLarge;setSize();try{localStorage.setItem('continuidad.vocabulario.texto-grande',isLarge?'1':'0')}catch{}});
+dialog.addEventListener('click',ev=>{const p=ev.target.closest('[data-lex-pick]');if(p){ev.preventDefault();showDefinition(p.dataset.lexPick)}else if(ev.target===dialog)close();});
+dialog.addEventListener('cancel',ev=>{ev.preventDefault();close()});
+dialog.addEventListener('keydown',ev=>{
+ if(ev.key!=='Tab')return;
+ const focusable=[...dialog.querySelectorAll('button:not(:disabled),input:not(:disabled),select:not(:disabled),a[href],[tabindex="0"]')].filter(n=>!n.hidden&&n.getClientRects().length);
+ if(!focusable.length){ev.preventDefault();return;}
+ const first=focusable[0],last=focusable[focusable.length-1],active=document.activeElement;
+ if(ev.shiftKey&&(active===first||!dialog.contains(active))){ev.preventDefault();last.focus()}
+ else if(!ev.shiftKey&&(active===last||!dialog.contains(active))){ev.preventDefault();first.focus()}
+});
+
+dialog.addEventListener('close',()=>{if(returnFocus?.setAttribute)returnFocus.setAttribute('aria-expanded','false');if(returnFocus?.isConnected&&!returnFocus.disabled)returnFocus.focus({preventScroll:true});else document.querySelector('[data-lex-all]')?.focus({preventScroll:true})});
+search.addEventListener('input',()=>{const q=normalize(search.value);const found=records.filter(([id,r])=>normalize(r.term+' '+r.aliases.join(' ')+' '+r.definition).includes(q)).map(([id])=>id);drawList(found);});
+const legacyTerms='[data-term],[data-apply-term],[data-do="term"]';
+function legacyId(node){return aliases.get(normalize(node.dataset.term||node.dataset.applyTerm||node.dataset.v||''));}
+const ownSelector='#lex-dialog,#continuidad-vocabulary-style,.lex-reading-guide';
+const excluded='script,style,code,pre,kbd,samp,input,textarea,option,select,svg,button,a,label,summary,noscript,#printArea,#report,#print,[data-apply-report],'+ownSelector;
+function attachAccessibility(node,ids){node.dataset.lexIds=JSON.stringify(ids);node.setAttribute('aria-haspopup','dialog');node.setAttribute('aria-controls','lex-dialog');}
+function enrich(){
+ observer.disconnect();
+ try{
+  for(const node of document.querySelectorAll(legacyTerms)){
+   if(node.closest(ownSelector))continue;const id=legacyId(node);if(!id)continue;node.classList.add('lex-term');attachAccessibility(node,[id]);
+  }
+  for(const b of document.querySelectorAll('#terms,#glos,[data-do="gloss"]')){b.dataset.lexAll='';b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls','lex-dialog');}
+  // Inline prose remains text with a light dotted underline. Existing action
+  // buttons retain their whole original action and get a separate help control.
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const nodes=[];let node;
+  while((node=walker.nextNode()))if(node.parentElement&&!node.parentElement.closest(excluded)&&node.textContent.trim())nodes.push(node);
+  for(const n of nodes){
+   const found=matches(n.textContent);if(!found.length)continue;const fragment=document.createDocumentFragment();let at=0;
+   for(const match of found){fragment.append(document.createTextNode(n.textContent.slice(at,match.index)));const b=el('button',match.text,'lex-term');b.type='button';attachAccessibility(b,[match.id]);b.setAttribute('aria-label','Explicar '+match.text);fragment.append(b);at=match.index+match.text.length;}
+   fragment.append(document.createTextNode(n.textContent.slice(at)));n.replaceWith(fragment);
+  }
+  for(const s of document.querySelectorAll('svg text')){
+   if(s.closest(ownSelector))continue;const ids=idsIn(s.textContent);if(!ids.length)continue;s.classList.add('lex-svg');s.setAttribute('role','button');s.setAttribute('tabindex','0');attachAccessibility(s,ids);s.setAttribute('aria-label','Explicar '+ids.map(id=>byId.get(id).term).join(', '));s.closest('svg')?.setAttribute('role','group');
+  }
+  const controls=[...document.querySelectorAll('button,a,label,summary,select')];
+  for(const control of controls){
+   if(control.closest(ownSelector+',#printArea,#report,#print,[data-apply-report]')||control.matches('.lex-term,.lex-help,[data-lex-all],[data-lex-ids],[data-lex-summary]')||control.closest('.lex-pair')||control.closest('button,a,label,summary,select')!==control)continue;
+   const ids=idsIn(surfaceText(control)||control.getAttribute('aria-label')||'');if(!ids.length)continue;
+   // Avoid duplicate help when a label already contains a genuine term button.
+   if(control.querySelector('[data-lex-ids]'))continue;
+   const help=el('button','?','lex-help');help.type='button';attachAccessibility(help,ids);help.setAttribute('aria-label','Explicar '+ids.map(id=>byId.get(id).term).join(', '));help.title='Consultar el significado sin ejecutar la orden';
+   if(control.tagName==='SUMMARY'){control.dataset.lexSummary=JSON.stringify(ids);control.append(help)}else{const pair=el('span',undefined,'lex-pair');pair.style.flex=getComputedStyle(control).flex;control.before(pair);pair.append(control,help);}
+  }
+ }finally{observer.observe(document.body,{childList:true,subtree:true,characterData:true});}
+}
+let queued=false;const observer=new MutationObserver(records=>{
+ if(records.every(r=>r.target.nodeType===1&&r.target.closest?.(ownSelector)))return;
+ if(!queued){queued=true;requestAnimationFrame(()=>{queued=false;enrich()})}
+});
+const guide=el('div',undefined,'lex-reading-guide');guide.id='lex-reading-guide';guide.setAttribute('role','note');guide.append(el('p','Palabras subrayadas: definición. El botón ? explica un control sin ejecutarlo.'));const find=el('button','Buscar una palabra');find.type='button';find.dataset.lexAll='';guide.append(find);
+const header=document.querySelector('header')||document.querySelector('.head');if(header)header.after(guide);else document.body.prepend(guide);
+document.addEventListener('click',ev=>{
+ if(ev.target.closest('#lex-dialog'))return;
+ const trigger=ev.target.closest('[data-lex-ids],[data-lex-all]');if(!trigger)return;
+ ev.preventDefault();ev.stopImmediatePropagation();let ids=[];try{ids=JSON.parse(trigger.dataset.lexIds||'[]')}catch{}
+ open(ids,trigger);
+},true);
+document.addEventListener('keydown',ev=>{
+ const trigger=ev.target.closest('.lex-svg');if(!trigger||!['Enter',' '].includes(ev.key))return;ev.preventDefault();ev.stopImmediatePropagation();open(JSON.parse(trigger.dataset.lexIds),trigger);
+},true);
+document.addEventListener('change',()=>{if(!queued){queued=true;requestAnimationFrame(()=>{queued=false;enrich()})}});
+function audit(){
+ const counts={};const missing=[];const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+ while((n=w.nextNode())){
+  const p=n.parentElement;if(!p||p.closest('script,style,code,pre,kbd,samp,input,textarea,option,noscript,#lex-dialog,#printArea,#report,#print,.lex-reading-guide,[data-apply-report]'))continue;
+  for(const match of matches(n.textContent)){
+   const covered=!!p.closest('[data-lex-ids],.lex-pair,[data-lex-summary]');const key=byId.get(match.id).term;counts[key]??={occurrences:0,covered:0};counts[key].occurrences++;if(covered)counts[key].covered++;else missing.push({term:key,text:n.textContent.trim().slice(0,160),tag:p.tagName});
+  }
+ }
+ return {definitions:byId.size,terms:counts,missing};
+}
+enrich();
+window.continuidadVocabulary={version:'2026-11-26',definitions:Object.fromEntries(records.map(([id,r])=>[r.term,r])),open:(term)=>open(term?[aliases.get(normalize(term))]:[]),refresh:enrich,audit};
+})();
+
+</script>
