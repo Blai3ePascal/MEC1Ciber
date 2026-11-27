@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102c35">
+  <meta name="description" content="Diez juegos de repaso de ciberresiliencia, con conceptos, decisiones, retos y puntuación por intentos.">
+  <title>Ciberresiliencia · Aula de repaso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#question">Saltar a la pregunta</a>
+  <header class="masthead">
+    <a class="brand" href="?dia=1&juego=1" aria-label="Ciberresiliencia, inicio"><span class="brand-symbol" aria-hidden="true">C<span>R</span></span><span>CIBERRESILIENCIA<small>AULA DE REPASO</small></span></a>
+    <nav class="day-nav" id="day-nav" aria-label="Días de clase"></nav>
+    <nav class="utility-nav" aria-label="Herramientas"><button id="glossary-open">Glosario</button><button id="board-open">Clasificación</button><button id="help-open" aria-label="Cómo se juega">Ayuda</button><button id="size-toggle" aria-label="Aumentar el tamaño del texto" title="Texto grande">A+</button></nav>
+  </header>
+  <div id="error-message" class="fatal" hidden></div>
+  <div id="app" hidden>
+    <nav id="mission-nav" class="mission-nav" aria-label="Misiones de este día"></nav>
+    <section class="mission-header" aria-labelledby="mission-title">
+      <div class="mission-heading"><div class="eyebrow" id="mission-eyebrow"></div><h1 id="mission-title"></h1><p id="mission-description"></p></div>
+      <div class="mission-stats">
+        <button class="profile-button" id="profile-open"><span class="profile-avatar" aria-hidden="true" id="profile-avatar">J</span><span><small>ESTÁS JUGANDO COMO</small><strong id="profile-name">Jugador 1</strong></span><span aria-hidden="true">⌄</span></button>
+        <div class="stats-row"><div><strong id="score">0</strong><span id="score-max">/ 1800 puntos</span></div><div><strong id="done">0/18</strong><span>resueltas</span></div><div><strong id="timer">00:00</strong><span>de ~30 minutos</span></div></div>
+      </div>
+    </section>
+    <div id="practice-banner" class="practice-banner" hidden><strong>Entrenamiento sin puntos</strong><span>Tu resultado guardado se conserva.</span><button id="leave-practice">Volver a mi partida</button></div>
+    <main class="workspace">
+      <div class="question-column">
+        <nav id="section-tabs" class="section-tabs" aria-label="Partes del repaso"></nav>
+        <article id="question" class="question-card" tabindex="-1" aria-labelledby="question-title">
+          <div class="question-kicker"><span id="question-count"></span><span id="attempt-label" class="attempt-label"></span></div>
+          <h2 id="question-title"></h2>
+          <div id="scenario" class="scenario" hidden></div>
+          <div id="question-metrics" class="question-metrics" hidden></div>
+          <p id="prompt" class="prompt"></p>
+          <div id="answers" class="answers" role="group" aria-label="Respuestas"></div>
+          <div id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></div>
+          <div class="question-navigation"><button id="prev-question" class="text-button">Anterior</button><div id="question-dots" class="question-dots" aria-label="Preguntas de esta pestaña"></div><button id="next-question" class="primary-button">Siguiente</button></div>
+        </article>
+      </div>
+      <aside class="sidebar" aria-label="Apoyo para esta misión">
+        <section class="scene-panel"><div class="scene-label"><span>ESCENARIO DE LA MISIÓN</span><span id="scene-number"></span></div><div id="mission-scene"></div><p id="scene-caption"></p></section>
+        <section class="concept-panel"><h2>Conceptos de esta pregunta</h2><p>Pulsa un término para abrir su definición.</p><div id="question-concepts" class="concept-chips"></div><button id="mission-glossary" class="subtle-link">Ver el glosario de la misión</button></section>
+        <section class="route-panel"><h2>Tu recorrido</h2><div id="section-progress"></div><div class="pace"><strong>30 minutos orientativos</strong><p>2 para situarte · 6 de conceptos · 14 de decisiones · 6 de reto final · 2 de cierre</p></div><button id="summary-open" class="secondary-button">Ver mi resultado</button></section>
+      </aside>
+    </main>
+    <footer class="page-footer"><p id="storage-message"></p><p>100 / 60 / 30 puntos según el intento. El cuarto permite terminar y aprender.</p><div><button id="practice-open">Repetir sin puntos</button><a id="original-link" href="#" target="_blank" rel="noopener">Abrir el simulador original</a></div></footer>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-top"><h2 id="dialog-title"></h2><button id="dialog-close" aria-label="Cerrar ventana">✕</button></div><div id="dialog-body"></div></dialog>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
